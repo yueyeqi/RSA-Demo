@@ -13,6 +13,9 @@
 		A9CD98C02462DA6100672E06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CD98BE2462DA6100672E06 /* Main.storyboard */; };
 		A9CD98C22462DA6700672E06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9CD98C12462DA6700672E06 /* Assets.xcassets */; };
 		A9CD98C52462DA6700672E06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9CD98C32462DA6700672E06 /* LaunchScreen.storyboard */; };
+		A9CD98CF2462DAD400672E06 /* RSACryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CD98CE2462DAD400672E06 /* RSACryptor.m */; };
+		A9CD98D22462DC7B00672E06 /* p.p12 in Resources */ = {isa = PBXBuildFile; fileRef = A9CD98D02462DB2700672E06 /* p.p12 */; };
+		A9CD98D32462DC7D00672E06 /* rsacert.der in Resources */ = {isa = PBXBuildFile; fileRef = A9CD98D12462DB3200672E06 /* rsacert.der */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		A9CD98C12462DA6700672E06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9CD98C42462DA6700672E06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A9CD98C62462DA6700672E06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9CD98CC2462DAD300672E06 /* RSA-Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RSA-Demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A9CD98CD2462DAD400672E06 /* RSACryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSACryptor.h; sourceTree = "<group>"; };
+		A9CD98CE2462DAD400672E06 /* RSACryptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSACryptor.m; sourceTree = "<group>"; };
+		A9CD98D02462DB2700672E06 /* p.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = p.p12; sourceTree = "<group>"; };
+		A9CD98D12462DB3200672E06 /* rsacert.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = rsacert.der; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 		A9CD98B72462DA6100672E06 /* RSA-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A9CD98D02462DB2700672E06 /* p.p12 */,
+				A9CD98D12462DB3200672E06 /* rsacert.der */,
+				A9CD98CD2462DAD400672E06 /* RSACryptor.h */,
+				A9CD98CE2462DAD400672E06 /* RSACryptor.m */,
 				A9CD98B82462DA6100672E06 /* AppDelegate.swift */,
 				A9CD98BA2462DA6100672E06 /* SceneDelegate.swift */,
 				A9CD98BC2462DA6100672E06 /* ViewController.swift */,
@@ -63,6 +75,7 @@
 				A9CD98C12462DA6700672E06 /* Assets.xcassets */,
 				A9CD98C32462DA6700672E06 /* LaunchScreen.storyboard */,
 				A9CD98C62462DA6700672E06 /* Info.plist */,
+				A9CD98CC2462DAD300672E06 /* RSA-Demo-Bridging-Header.h */,
 			);
 			path = "RSA-Demo";
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 				TargetAttributes = {
 					A9CD98B42462DA6100672E06 = {
 						CreatedOnToolsVersion = 11.4.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -127,7 +141,9 @@
 			files = (
 				A9CD98C52462DA6700672E06 /* LaunchScreen.storyboard in Resources */,
 				A9CD98C22462DA6700672E06 /* Assets.xcassets in Resources */,
+				A9CD98D22462DC7B00672E06 /* p.p12 in Resources */,
 				A9CD98C02462DA6100672E06 /* Main.storyboard in Resources */,
+				A9CD98D32462DC7D00672E06 /* rsacert.der in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +154,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9CD98CF2462DAD400672E06 /* RSACryptor.m in Sources */,
 				A9CD98BD2462DA6100672E06 /* ViewController.swift in Sources */,
 				A9CD98B92462DA6100672E06 /* AppDelegate.swift in Sources */,
 				A9CD98BB2462DA6100672E06 /* SceneDelegate.swift in Sources */,
@@ -284,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JS3K8WTP9T;
 				INFOPLIST_FILE = "RSA-Demo/Info.plist";
@@ -293,6 +311,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcus.RSA-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSA-Demo/RSA-Demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -302,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JS3K8WTP9T;
 				INFOPLIST_FILE = "RSA-Demo/Info.plist";
@@ -311,6 +332,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.marcus.RSA-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RSA-Demo/RSA-Demo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
